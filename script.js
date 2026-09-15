@@ -147,19 +147,28 @@ function launchConfetti() {
 
 // -------------------- BACKGROUND MUSIC --------------------
 const audio = document.getElementById("birthdayAudio");
+const MUSIC_FILE = "audio/Romantic%20Happy%20Birthday%20%28Arranged%20by%20Miranda%20Wong%29%20Piano%20Cover.mp3";
+
+audio.src = MUSIC_FILE;
 audio.loop = true;
+audio.volume = 0.45;
+audio.load();
 
 async function startBackgroundMusic() {
   try {
     await audio.play();
     document.removeEventListener("pointerdown", startBackgroundMusic);
+    document.removeEventListener("click", startBackgroundMusic);
+    document.removeEventListener("touchstart", startBackgroundMusic);
     document.removeEventListener("keydown", startBackgroundMusic);
   } catch (error) {
-    // Browsers may require another user interaction before allowing audio.
+    // The browser may require a later user interaction before allowing audio.
   }
 }
 
 document.addEventListener("pointerdown", startBackgroundMusic);
+document.addEventListener("click", startBackgroundMusic);
+document.addEventListener("touchstart", startBackgroundMusic, { passive: true });
 document.addEventListener("keydown", startBackgroundMusic);
 
 // -------------------- SIMPLE SWIPE SUPPORT --------------------
