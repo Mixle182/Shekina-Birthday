@@ -142,6 +142,11 @@ audio.loop = true;
 audio.volume = 0.45;
 audio.load();
 
+audio.addEventListener("ended", () => {
+  audio.currentTime = 0;
+  audio.play().catch(() => {});
+});
+
 async function startBackgroundMusic() {
   try {
     await audio.play();
@@ -158,6 +163,23 @@ document.addEventListener("pointerdown", startBackgroundMusic);
 document.addEventListener("click", startBackgroundMusic);
 document.addEventListener("touchstart", startBackgroundMusic, { passive: true });
 document.addEventListener("keydown", startBackgroundMusic);
+
+// -------------------- MEMORY GALLERY --------------------
+const memoryPhotos = [...document.querySelectorAll(".memory-photo")];
+const memoryDots = [...document.querySelectorAll(".dot")];
+
+function showMemory(index) {
+  memoryPhotos.forEach((photo, photoIndex) => {
+    photo.classList.toggle("active-photo", photoIndex === index);
+  });
+  memoryDots.forEach((dot, dotIndex) => {
+    dot.classList.toggle("active", dotIndex === index);
+  });
+}
+
+memoryDots.forEach((dot, index) => {
+  dot.addEventListener("click", () => showMemory(index));
+});
 
 // -------------------- SIMPLE SWIPE SUPPORT --------------------
 let touchStartX = 0;
