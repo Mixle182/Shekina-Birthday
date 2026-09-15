@@ -525,6 +525,21 @@ button { font: inherit; }
 }
 .birthday-final span { color: #d7a4ff; text-shadow: 0 0 18px rgba(210, 143, 255, .55); }
 .amen { color: #aaa6c1; font-size: 11px; margin-top: 18px; }
+.verse {
+  max-width: 330px;
+  margin: 24px auto 0;
+  color: #d9d2eb;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 16px;
+  line-height: 1.45;
+}
+.verse span {
+  display: inline-block;
+  margin-top: 6px;
+  color: #d7a4ff;
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+}
 .restart-btn {
   margin-top: 18px;
   background: transparent;
