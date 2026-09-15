@@ -5,7 +5,6 @@
 
 const screens = [...document.querySelectorAll(".screen")];
 const progressBar = document.getElementById("progressBar");
-const screenCount = document.getElementById("screenCount");
 const backBtn = document.getElementById("backBtn");
 const stars = document.getElementById("stars");
 
@@ -39,7 +38,6 @@ function showScreen(index, direction = 1) {
   screens[current].classList.add("active");
 
   progressBar.style.width = `${((current + 1) / screens.length) * 100}%`;
-  screenCount.textContent = `${current + 1} / ${screens.length}`;
   backBtn.style.visibility = current === 0 ? "hidden" : "visible";
 
   // Keep the new screen at the top.
@@ -62,7 +60,6 @@ document.getElementById("restartBtn").addEventListener("click", () => {
   current = 0;
   screens[0].classList.add("active");
   progressBar.style.width = "12.5%";
-  screenCount.textContent = "1 / 7";
   backBtn.style.visibility = "hidden";
   window.scrollTo(0, 0);
 });
