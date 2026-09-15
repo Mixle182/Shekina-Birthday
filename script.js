@@ -4,8 +4,6 @@
 // ============================================================
 
 const screens = [...document.querySelectorAll(".screen")];
-const progressBar = document.getElementById("progressBar");
-const backBtn = document.getElementById("backBtn");
 const stars = document.getElementById("stars");
 
 let current = 0;
@@ -37,9 +35,6 @@ function showScreen(index, direction = 1) {
   current = index;
   screens[current].classList.add("active");
 
-  progressBar.style.width = `${((current + 1) / screens.length) * 100}%`;
-  backBtn.style.visibility = current === 0 ? "hidden" : "visible";
-
   // Keep the new screen at the top.
   screens[current].scrollTop = 0;
 
@@ -53,14 +48,10 @@ document.querySelectorAll(".next-btn").forEach(button => {
   });
 });
 
-backBtn.addEventListener("click", () => showScreen(current - 1));
-
 document.getElementById("restartBtn").addEventListener("click", () => {
   screens[current].classList.remove("active");
   current = 0;
   screens[0].classList.add("active");
-  progressBar.style.width = "12.5%";
-  backBtn.style.visibility = "hidden";
   window.scrollTo(0, 0);
 });
 
@@ -189,11 +180,6 @@ document.addEventListener("touchend", e => {
     else showScreen(current - 1);
   }
 }, { passive: true });
-
-// Initial state
-backBtn.style.visibility = "hidden";
-progressBar.style.width = `${100 / screens.length}%`;
-
 
 // -------------------- RANDOM SHOOTING STARS --------------------
 const shootingContainer = document.body;

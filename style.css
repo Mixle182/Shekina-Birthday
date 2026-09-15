@@ -17,12 +17,12 @@
 html, body {
   margin: 0;
   min-height: 100%;
+  width: 100%;
+  overflow-x: hidden;
   background: var(--night);
   color: var(--white);
   font-family: Inter, system-ui, sans-serif;
 }
-
-body { overflow-x: hidden; }
 
 button { font: inherit; }
 
@@ -87,7 +87,8 @@ button { font: inherit; }
   padding: 54px 22px 88px;
   display: none;
   place-items: center;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   opacity: 0;
   transform: translateX(24px);
 }
@@ -486,30 +487,6 @@ button { font: inherit; }
   color: #aaa4c1;
   font-size: 11px;
 }
-
-.progress-nav {
-  position: fixed;
-  z-index: 20;
-  bottom: max(16px, env(safe-area-inset-bottom));
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(calc(100% - 36px), 430px);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 9px 11px;
-  border: 1px solid rgba(181, 154, 255, .18);
-  border-radius: 999px;
-  background: rgba(4, 6, 26, .65);
-  backdrop-filter: blur(15px);
-}
-.back-btn {
-  border: 0; background: none; color: #ddd6f1;
-  font-size: 26px; line-height: 1; cursor: pointer;
-}
-.progress { height: 3px; flex: 1; border-radius: 10px; background: rgba(255,255,255,.13); overflow: hidden; }
-.progress span { display: block; width: 12.5%; height: 100%; background: #b983ff; box-shadow: 0 0 10px #b983ff; transition: width .4s ease; }
-#screenCount { font-size: 9px; color: #a9a5bf; min-width: 28px; text-align: right; }
 
 @media (min-width: 700px) {
   body { display: grid; place-items: center; background: #030515; }
