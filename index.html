@@ -12,6 +12,9 @@
   <div id="stars" class="stars" aria-hidden="true"></div>
   <div class="shooting-star shooting-star-1" aria-hidden="true"></div>
   <div class="shooting-star shooting-star-2" aria-hidden="true"></div>
+  <audio id="birthdayAudio" preload="auto" autoplay loop>
+    <source src="audio/Romantic%20Happy%20Birthday%20%28Arranged%20by%20Miranda%20Wong%29%20Piano%20Cover.mp3" type="audio/mpeg">
+  </audio>
 
   <main class="app">
     <!-- 1. Welcome -->
@@ -93,29 +96,7 @@
         </div>
 
         <div class="memory-tip">Tip: duplicate the photo card in the HTML when you want more memories.</div>
-        <button class="primary-btn next-btn" data-next="music">One more thing <span>→</span></button>
-      </div>
-    </section>
-
-    <!-- 5. Music -->
-    <section class="screen" id="music">
-      <div class="section-content music-content">
-        <p class="eyebrow">A little music for you</p>
-        <h2 class="script">A Song<br><span>for You</span></h2>
-        <p class="subtext">Add your own MP3 file and change the filename in <b>script.js</b> if you'd like music here.</p>
-
-        <div class="vinyl">
-          <div class="vinyl-center">♪</div>
-        </div>
-
-        <button class="play-btn" id="playBtn" aria-label="Play or pause music">▶</button>
-        <p class="song-status" id="songStatus">Music is optional ♡</p>
-        <audio id="birthdayAudio" preload="none" controls>
-          <source src="audio/Romantic%20Happy%20Birthday%20%28Arranged%20by%20Miranda%20Wong%29%20Piano%20Cover.mp3" type="audio/mpeg">
-          Your browser does not support audio playback.
-        </audio>
-
-        <button class="primary-btn next-btn" data-next="surprise">There's one more thing <span>→</span></button>
+        <button class="primary-btn next-btn" data-next="surprise">One more thing <span>→</span></button>
       </div>
     </section>
 
@@ -175,7 +156,7 @@
     <nav class="progress-nav" aria-label="Birthday surprise progress">
       <button class="back-btn" id="backBtn" aria-label="Previous screen">‹</button>
       <div class="progress"><span id="progressBar"></span></div>
-      <span id="screenCount">1 / 8</span>
+      <span id="screenCount">1 / 7</span>
     </nav>
   </main>
 

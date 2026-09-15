@@ -62,7 +62,7 @@ document.getElementById("restartBtn").addEventListener("click", () => {
   current = 0;
   screens[0].classList.add("active");
   progressBar.style.width = "12.5%";
-  screenCount.textContent = "1 / 8";
+  screenCount.textContent = "1 / 7";
   backBtn.style.visibility = "hidden";
   window.scrollTo(0, 0);
 });
@@ -145,52 +145,22 @@ function launchConfetti() {
   }
 }
 
-// -------------------- OPTIONAL MUSIC --------------------
-// If you have a song you are allowed to use:
-// 1. Put it inside an "audio" folder.
-// 2. Rename it to "birthday-song.mp3", OR change the path below.
-// 3. The play button will then work.
-//
-// Example:
-// const MUSIC_FILE = "audio/birthday-song.mp3";
-const MUSIC_FILE = "audio/Romantic%20Happy%20Birthday%20%28Arranged%20by%20Miranda%20Wong%29%20Piano%20Cover.mp3";
-
+// -------------------- BACKGROUND MUSIC --------------------
 const audio = document.getElementById("birthdayAudio");
-const playBtn = document.getElementById("playBtn");
-const songStatus = document.getElementById("songStatus");
-const vinyl = document.querySelector(".vinyl");
+audio.loop = true;
 
-if (MUSIC_FILE) {
-  audio.src = MUSIC_FILE;
-
-  playBtn.addEventListener("click", async () => {
-    try {
-      if (audio.paused) {
-        await audio.play();
-        playBtn.textContent = "Ⅱ";
-        songStatus.textContent = "Music is playing ♡";
-        vinyl.classList.add("playing");
-      } else {
-        audio.pause();
-        playBtn.textContent = "▶";
-        songStatus.textContent = "Music paused";
-        vinyl.classList.remove("playing");
-      }
-    } catch (error) {
-      songStatus.textContent = "Tap again to start the music.";
-    }
-  });
-
-  audio.addEventListener("ended", () => {
-    playBtn.textContent = "▶";
-    songStatus.textContent = "Music finished ♡";
-    vinyl.classList.remove("playing");
-  });
-} else {
-  playBtn.addEventListener("click", () => {
-    songStatus.textContent = "Add your own song in script.js to enable music ♡";
-  });
+async function startBackgroundMusic() {
+  try {
+    await audio.play();
+    document.removeEventListener("pointerdown", startBackgroundMusic);
+    document.removeEventListener("keydown", startBackgroundMusic);
+  } catch (error) {
+    // Browsers may require another user interaction before allowing audio.
+  }
 }
+
+document.addEventListener("pointerdown", startBackgroundMusic);
+document.addEventListener("keydown", startBackgroundMusic);
 
 // -------------------- SIMPLE SWIPE SUPPORT --------------------
 let touchStartX = 0;
@@ -216,7 +186,7 @@ document.addEventListener("touchend", e => {
 
 // Initial state
 backBtn.style.visibility = "hidden";
-progressBar.style.width = "12.5%";
+progressBar.style.width = `${100 / screens.length}%`;
 
 
 // -------------------- RANDOM SHOOTING STARS --------------------
