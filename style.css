@@ -256,6 +256,16 @@ button { font: inherit; }
   border: 1px solid #b796ff;
   z-index: 3;
 }
+.gift-lid::after {
+  content: "";
+  position: absolute;
+  width: 17px;
+  height: 27px;
+  left: 50px;
+  top: -1px;
+  background: linear-gradient(90deg, #e9baff, #9b5cff);
+  box-shadow: 0 0 13px rgba(224, 168, 255, .45);
+}
 .gift-ribbon-v {
   position: absolute;
   width: 17px;
@@ -298,6 +308,17 @@ button { font: inherit; }
 
 .gift.open .gift-lid {
   transform: translateY(-27px) rotate(-3deg);
+  transition: .65s ease;
+}
+.gift.open .gift-ribbon-v {
+  clip-path: inset(27px 0 0);
+}
+.gift.open .bow-left {
+  transform: translateY(-27px) rotate(25deg);
+  transition: .65s ease;
+}
+.gift.open .bow-right {
+  transform: translateY(-27px) scaleX(-1) rotate(25deg);
   transition: .65s ease;
 }
 .gift.open .gift-glow { animation: burst .7s ease-out forwards; }
