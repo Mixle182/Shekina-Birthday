@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#090b2b">
+  <meta name="description" content="A little birthday surprise for Shekina.">
+  <title>For Shekina ✨</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="stars" class="stars" aria-hidden="true"></div>
+  <div class="shooting-star shooting-star-1" aria-hidden="true"></div>
+  <div class="shooting-star shooting-star-2" aria-hidden="true"></div>
+
+  <main class="app">
+    <!-- 1. Welcome -->
+    <section class="screen active" id="welcome">
+      <div class="moon moon-small"></div>
+      <div class="hero-content">
+        <p class="eyebrow">A little surprise for you</p>
+        <h1 class="script">Hey,<br><span>Shekina...</span></h1>
+        <p class="lead">Someone special has prepared something under the stars just for you.</p>
+        <div class="star-divider"><span>✦</span><span>♡</span><span>✦</span></div>
+        <p class="question">Are you ready?</p>
+        <button class="primary-btn next-btn" data-next="birthday">Tap to Continue <span>→</span></button>
+      </div>
+      <div class="mountains" aria-hidden="true"></div>
+    </section>
+
+    <!-- 2. Birthday -->
+    <section class="screen" id="birthday">
+      <div class="confetti-layer" id="confetti" aria-hidden="true"></div>
+      <div class="hero-content birthday-content">
+        <p class="eyebrow">Tonight, the stars shine a little brighter</p>
+        <h2 class="script">Happy Birthday,<br><span>Shekina!</span></h2>
+
+        <button class="gift" id="birthdayGift" aria-label="Open birthday gift">
+          <span class="gift-glow"></span>
+          <span class="gift-lid"></span>
+          <span class="gift-box"></span>
+          <span class="gift-ribbon-v"></span>
+          <span class="gift-ribbon-h"></span>
+          <span class="bow bow-left"></span>
+          <span class="bow bow-right"></span>
+        </button>
+
+        <p class="gift-hint" id="giftHint">Tap the gift ✨</p>
+        <p class="small-note" id="giftMessage">Another year of your beautiful existence, and the world is so much brighter because of you.</p>
+        <button class="secondary-btn next-btn hidden" data-next="message">There's a message for you <span>→</span></button>
+      </div>
+    </section>
+
+    <!-- 3. Message -->
+    <section class="screen" id="message">
+      <div class="message-card">
+        <div class="card-moon"></div>
+        <p class="eyebrow">A message from the heart</p>
+        <h2 class="script">Dear Shekina,</h2>
+
+        <div class="letter">
+          <p>Every star you see above is just like what you are — <strong>radiant, unique, and full of wonder.</strong> The beauty of the night starry sky reflects the genuine heart God has given you, shining brightly even in the darkest moments.</p>
+
+          <p>May the Lord, who set the heavens in place, continue to guide your path and let His light shine through you like constellations that inspire hope. Just as the moon graces the sky with its gentle glow, may His grace and love illuminate your journey and bless everyone you encounter.</p>
+
+          <p>On this special day, Shekina, may God grant you <strong>joy as vast as the heavens, peace that surpasses understanding, and dreams that soar higher than the stars themselves.</strong></p>
+        </div>
+
+        <div class="signature">With love &amp; prayers <span>♡</span></div>
+        <button class="primary-btn next-btn" data-next="memories">Continue to the memories <span>→</span></button>
+      </div>
+    </section>
+
+    <!-- 4. Memories -->
+    <section class="screen" id="memories">
+      <div class="section-content">
+        <p class="eyebrow">A little collection of moments</p>
+        <h2 class="script">Our Little<br><span>Memories</span></h2>
+        <p class="subtext">Replace these placeholders with your favorite photos of Shekina.</p>
+
+        <div class="photo-card">
+          <div class="photo-placeholder">
+            <span>✦</span>
+            <p>Your Photo Here</p>
+            <small>Add your image to the <b>images</b> folder</small>
+          </div>
+          <div class="photo-caption">A memory worth keeping ✨</div>
+        </div>
+
+        <div class="dots" aria-label="Photo gallery indicator">
+          <button class="dot active"></button><button class="dot"></button>
+          <button class="dot"></button><button class="dot"></button>
+        </div>
+
+        <div class="memory-tip">Tip: duplicate the photo card in the HTML when you want more memories.</div>
+        <button class="primary-btn next-btn" data-next="music">One more thing <span>→</span></button>
+      </div>
+    </section>
+
+    <!-- 5. Music -->
+    <section class="screen" id="music">
+      <div class="section-content music-content">
+        <p class="eyebrow">A little music for you</p>
+        <h2 class="script">A Song<br><span>for You</span></h2>
+        <p class="subtext">Add your own MP3 file and change the filename in <b>script.js</b> if you'd like music here.</p>
+
+        <div class="vinyl">
+          <div class="vinyl-center">♪</div>
+        </div>
+
+        <button class="play-btn" id="playBtn" aria-label="Play or pause music">▶</button>
+        <p class="song-status" id="songStatus">Music is optional ♡</p>
+        <audio id="birthdayAudio" preload="none"></audio>
+
+        <button class="primary-btn next-btn" data-next="surprise">There's one more thing <span>→</span></button>
+      </div>
+    </section>
+
+    <!-- 6. Surprise -->
+    <section class="screen" id="surprise">
+      <div class="section-content surprise-content">
+        <p class="eyebrow">One last little surprise...</p>
+        <h2 class="script">Open<br><span>this gift</span></h2>
+        <p class="subtext">Tap the box and see what's waiting inside.</p>
+
+        <button class="gift large-gift" id="finalGift" aria-label="Open final gift">
+          <span class="gift-glow"></span>
+          <span class="gift-lid"></span>
+          <span class="gift-box"></span>
+          <span class="gift-ribbon-v"></span>
+          <span class="gift-ribbon-h"></span>
+          <span class="bow bow-left"></span>
+          <span class="bow bow-right"></span>
+        </button>
+
+        <div class="surprise-message" id="surpriseMessage">
+          <span class="sparkle">✦</span>
+          <p>May you always remember how wonderfully and intentionally God created you.</p>
+          <button class="primary-btn next-btn" data-next="final">Keep going <span>→</span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Final -->
+    <section class="screen final-screen" id="final">
+      <div class="final-content">
+        <div class="constellation" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <p class="eyebrow">Keep shining</p>
+        <h2 class="script">You are<br><span>truly special.</span></h2>
+        <p class="final-line">Shekina, may your light continue to point others toward hope, grace, and the One who created you.</p>
+        <div class="star-divider"><span>✦</span><span>♡</span><span>✦</span></div>
+        <button class="primary-btn next-btn" data-next="closing">One final blessing <span>→</span></button>
+      </div>
+    </section>
+
+    <!-- 8. Closing -->
+    <section class="screen closing-screen" id="closing">
+      <div class="closing-content">
+        <div class="moon moon-large"></div>
+        <p class="eyebrow">For Shekina</p>
+        <h2 class="script">May your days be as bright<br>as the stars...</h2>
+        <p class="closing-text">and your heart as full as the sky.</p>
+        <div class="star-divider"><span>✦</span><span>♡</span><span>✦</span></div>
+        <p class="birthday-final">HAPPY BIRTHDAY,<br><span>SHEKINA!</span></p>
+        <p class="amen">May God bless you always. ✨</p>
+        <button class="restart-btn" id="restartBtn">↻ Experience it again</button>
+      </div>
+    </section>
+
+    <nav class="progress-nav" aria-label="Birthday surprise progress">
+      <button class="back-btn" id="backBtn" aria-label="Previous screen">‹</button>
+      <div class="progress"><span id="progressBar"></span></div>
+      <span id="screenCount">1 / 8</span>
+    </nav>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
