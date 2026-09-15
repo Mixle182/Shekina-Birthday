@@ -164,23 +164,6 @@ document.addEventListener("click", startBackgroundMusic);
 document.addEventListener("touchstart", startBackgroundMusic, { passive: true });
 document.addEventListener("keydown", startBackgroundMusic);
 
-// -------------------- MEMORY GALLERY --------------------
-const memoryPhotos = [...document.querySelectorAll(".memory-photo")];
-const memoryDots = [...document.querySelectorAll(".dot")];
-
-function showMemory(index) {
-  memoryPhotos.forEach((photo, photoIndex) => {
-    photo.classList.toggle("active-photo", photoIndex === index);
-  });
-  memoryDots.forEach((dot, dotIndex) => {
-    dot.classList.toggle("active", dotIndex === index);
-  });
-}
-
-memoryDots.forEach((dot, index) => {
-  dot.addEventListener("click", () => showMemory(index));
-});
-
 // -------------------- SIMPLE SWIPE SUPPORT --------------------
 let touchStartX = 0;
 let touchStartY = 0;

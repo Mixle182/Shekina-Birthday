@@ -392,6 +392,13 @@ button { font: inherit; }
 }
 .memory-photo { display: none; }
 .memory-photo.active-photo { display: block; }
+.memory-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 16px;
+}
 .photo-placeholder {
   aspect-ratio: 4 / 5;
   border-radius: 16px;
