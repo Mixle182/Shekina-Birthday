@@ -269,9 +269,9 @@ button { font: inherit; }
 .gift-ribbon-v {
   position: absolute;
   width: 17px;
-  height: 89px;
+  height: 78px;
   left: 69px;
-  top: 43px;
+  top: 55px;
   background: linear-gradient(90deg, #e9baff, #9b5cff);
   z-index: 4;
   box-shadow: 0 0 13px rgba(224, 168, 255, .45);
@@ -309,9 +309,6 @@ button { font: inherit; }
 .gift.open .gift-lid {
   transform: translateY(-27px) rotate(-3deg);
   transition: .65s ease;
-}
-.gift.open .gift-ribbon-v {
-  clip-path: inset(27px 0 0);
 }
 .gift.open .bow-left {
   transform: translateY(-27px) rotate(25deg);
