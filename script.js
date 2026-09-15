@@ -153,7 +153,7 @@ function launchConfetti() {
 //
 // Example:
 // const MUSIC_FILE = "audio/birthday-song.mp3";
-const MUSIC_FILE = "";
+const MUSIC_FILE = "audio/Romantic Happy Birthday (Arranged by Miranda Wong) Piano Cover.mp3";
 
 const audio = document.getElementById("birthdayAudio");
 const playBtn = document.getElementById("playBtn");
