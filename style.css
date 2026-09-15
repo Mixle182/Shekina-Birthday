@@ -488,6 +488,10 @@ button { font: inherit; }
   font-size: 11px;
 }
 
+/* The progress indicator is no longer part of the page. */
+.progress-nav { display: none !important; }
+html, body, .app { max-width: 100%; overflow-x: hidden; }
+
 @media (min-width: 700px) {
   body { display: grid; place-items: center; background: #030515; }
   .app { width: 430px; min-height: 100svh; overflow: hidden; box-shadow: 0 0 100px rgba(82, 45, 150, .18); }
